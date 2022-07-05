@@ -1,8 +1,17 @@
 package ru.ac.uniyar.IvanVoronov;
 
 public class Fraction {
+
+	// m - числитель, целое число
+	// n - знаменатель, натуральное неотрицательное число
 	private int m, n;
 
+	/**
+	 * Приватный метод, который ищет наибольший общий делитель двух положительных чисел
+	 * @param a первое число
+	 * @param b второе число
+	 * @return наибольший общий делитель чисел a и b
+	 */
 	private int getNOD(int a, int b) {
 		if (a == 0) {
 			return b;
@@ -17,16 +26,24 @@ public class Fraction {
 		}
 	}
 
+	/**
+	 * Приватный метод, который сокращает дробь.
+	 * */
 	private void simplify() {
 		int nod = getNOD(Math.abs(m), Math.abs(n));
 		m /= nod;
 		n /= nod;
+		// Знак дроби хранится в числителе, а знаменатель всегда строго положителен.
 		if (n < 0) {
 			n *= -1;
 			m *= -1;
 		}
 	}
 
+	/**
+	 * Метод проверяет, является ли дробь нулем
+	 * @return true если ноль, false если не ноль
+	 * */
 	public boolean isZero() {
 		return m == 0;
 	}
