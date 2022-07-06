@@ -86,4 +86,12 @@ public class Fraction {
 		else
 			return m + "/" + n;
 	}
+
+	public static Fraction parseFraction(String fraction) {
+		String[] data = fraction.split("/");
+		if (data.length == 1) {
+			return new Fraction(Integer.parseInt(data[0]));
+		}
+		return new Fraction(Integer.parseInt(data[0]), Integer.parseInt(data[1]));
+	}
 }
