@@ -1,14 +1,24 @@
 package ru.ac.uniyar.IvanVoronov;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		String data = input.nextLine();
-		String[] parData = data.split(" ");
-		String answer = calculate(parData[0], parData[1], parData[2]);
-		System.out.println(answer);
+		System.out.print("Введите число операций: ");
+		int num = Integer.parseInt(input.nextLine());
+		List<String> expressions = new ArrayList<>();
+		for (int i = 0; i < num; i++) {
+			String expression = input.nextLine();
+			expressions.add(expression);
+		}
+		for (int i = 0; i < num; i++) {
+			String[] parData = expressions.get(i).split(" ");
+			String answer = calculate(parData[0], parData[1], parData[2]);
+			System.out.println(answer);
+		}
 	}
 
 	public static String calculate(String num1, String operation, String num2) {
