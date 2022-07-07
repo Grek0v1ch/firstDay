@@ -8,7 +8,7 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		System.out.print("Введите число операций: ");
-		int num = Integer.parseInt(input.nextLine());
+		int num = CheckingInput.inputOneInt(input);
 		List<String> expressions = new ArrayList<>();
 		for (int i = 0; i < num; i++) {
 			String expression = input.nextLine();
