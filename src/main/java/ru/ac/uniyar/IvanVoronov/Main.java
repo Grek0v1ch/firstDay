@@ -29,7 +29,7 @@ public class Main {
 					return  number1.div(number2).toString();
 				}
 			default:
-				return "Ошибка";
+				return "Ошибка!";
 		}
 	}
 }
